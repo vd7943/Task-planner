@@ -35,7 +35,7 @@ const AddPlan = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/plan/add-plan",
+        "https://task-planner-k097.onrender.com/plan/add-plan",
         {
           userId: authUser._id,
           userRole: authUser.role,

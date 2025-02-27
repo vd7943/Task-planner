@@ -34,7 +34,7 @@ const SubscriptionPlan = () => {
     }
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/plan/buy-subscription",
+        "https://task-planner-k097.onrender.com/plan/buy-subscription",
         {
           amount,
         },
@@ -58,14 +58,14 @@ const SubscriptionPlan = () => {
           };
           try {
             const verifyRes = await axios.post(
-              "http://localhost:3000/plan/verify-payment",
+              "https://task-planner-k097.onrender.com/plan/verify-payment",
               payload
             );
             if (verifyRes.data.success) {
               toast.success("Payment Successful!");
 
               const updatedUserRes = await axios.get(
-                `http://localhost:3000/user/${userId}`,
+                `https://task-planner-k097.onrender.com/user/${userId}`,
                 { withCredentials: true }
               );
 

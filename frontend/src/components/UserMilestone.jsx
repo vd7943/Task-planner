@@ -12,7 +12,7 @@ const UserMilestone = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/remark/${authUser._id}`, {
+      .get(`https://task-planner-k097.onrender.com/remark/${authUser._id}`, {
         withCredentials: true,
       })
       .then((response) => {

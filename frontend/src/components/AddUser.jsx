@@ -40,7 +40,7 @@ const AddUser = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/user/signup",
+        "https://task-planner-k097.onrender.com/user/signup",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

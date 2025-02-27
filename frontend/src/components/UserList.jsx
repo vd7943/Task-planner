@@ -7,7 +7,7 @@ const UserList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/admin/get-user-data", {
+      .get("https://task-planner-k097.onrender.com/admin/get-user-data", {
         withCredentials: true,
       })
       .then((response) => {

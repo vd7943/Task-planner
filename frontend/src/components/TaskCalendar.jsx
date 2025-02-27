@@ -95,7 +95,7 @@ const TaskCalendar = () => {
       try {
         // Fetch tasks
         const taskResponse = await axios.get(
-          `http://localhost:3000/task/${authUser._id}`,
+          `https://task-planner-k097.onrender.com/task/${authUser._id}`,
           { withCredentials: true }
         );
         const taskEvents = taskResponse.data.map((task) => ({
@@ -114,7 +114,7 @@ const TaskCalendar = () => {
 
         // Fetch plans
         const planResponse = await axios.get(
-          `http://localhost:3000/plan/get-user-plan/${authUser._id}`,
+          `https://task-planner-k097.onrender.com/plan/get-user-plan/${authUser._id}`,
           { withCredentials: true }
         );
 
@@ -182,7 +182,7 @@ const TaskCalendar = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:3000/remark/set-remark",
+        "https://task-planner-k097.onrender.com/remark/set-remark",
         remarkData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -191,7 +191,7 @@ const TaskCalendar = () => {
       if (response.data.success) {
         toast.success(response.data.message);
         const updatedUserRes = await axios.get(
-          `http://localhost:3000/user/${authUser._id}`,
+          `https://task-planner-k097.onrender.com/user/${authUser._id}`,
           { withCredentials: true }
         );
         if (updatedUserRes.data.user) {
@@ -226,7 +226,7 @@ const TaskCalendar = () => {
           : null, // Handle null case
       };
       const response = await axios.put(
-        `http://localhost:3000/task/edit-task/${selectedTask.id}`,
+        `https://task-planner-k097.onrender.com/task/edit-task/${selectedTask.id}`,
         updatedTask,
         {
           headers: { "Content-Type": "multipart/form-data" },

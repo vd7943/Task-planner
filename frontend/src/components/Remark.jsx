@@ -26,14 +26,17 @@ const Remark = () => {
       try {
         const [plansResponse, tasksResponse] = await Promise.all([
           axios.get(
-            `http://localhost:3000/plan/get-user-plan/${authUser._id}`,
+            `https://task-planner-k097.onrender.com/plan/get-user-plan/${authUser._id}`,
             {
               withCredentials: true,
             }
           ),
-          axios.get(`http://localhost:3000/task/${authUser._id}`, {
-            withCredentials: true,
-          }),
+          axios.get(
+            `https://task-planner-k097.onrender.com/task/${authUser._id}`,
+            {
+              withCredentials: true,
+            }
+          ),
         ]);
 
         const mergedTasks = [
@@ -64,7 +67,7 @@ const Remark = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/remark/set-remark",
+        "https://task-planner-k097.onrender.com/remark/set-remark",
         { ...data, userId },
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -73,7 +76,7 @@ const Remark = () => {
       if (response.data.success) {
         toast.success(response.data.message);
         const updatedUserRes = await axios.get(
-          `http://localhost:3000/user/${userId}`,
+          `https://task-planner-k097.onrender.com/user/${userId}`,
           { withCredentials: true }
         );
         if (updatedUserRes.data.user) {
