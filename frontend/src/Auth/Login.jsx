@@ -5,11 +5,11 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const handleGitHubLogIn = () => {
-    window.location.href = "http://localhost:3000/user/auth/github";
+    window.location.href = "https://task-planner-k097.onrender.com/user/auth/github";
   };
 
   const handleGoogleLogIn = () => {
-    window.location.href = "http://localhost:3000/user/auth/google";
+    window.location.href = "https://task-planner-k097.onrender.com/user/auth/google";
   };
 
   return (
