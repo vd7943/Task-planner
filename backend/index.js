@@ -55,13 +55,13 @@ app.use(
 );
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || "yourSecretKey",
+    secret: "your-secret-key",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: URI,
-      ttl: 14 * 24 * 60 * 60, // Session expiration time (14 days)
-    }),
+    cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+    },
   })
 );
 app.use(passport.initialize());
